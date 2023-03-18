@@ -9,10 +9,55 @@ Run a fast ChatGPT-like model locally on your device. The screencast below is no
 This combines the [LLaMA foundation model](https://github.com/facebookresearch/llama) with an [KoAlpaca](https://github.com/Beomi/KoAlpaca) a fine-tuning of the base model to obey instructions (akin to the [RLHF](https://huggingface.co/blog/rlhf) used to train ChatGPT) and a set of modifications to [llama.cpp](https://github.com/ggerganov/llama.cpp) to add a chat interface. 
 
 ## Get started
+To chat with the KoAlpaca model using the provided Python script, simply follow these steps:
+1. Install Python 3 and the necessary dependencies (Hugging Face Transformers and PyTorch libraries).
+2. Save the koalpaca.py script in a directory of your choice.
+3. Open a terminal or command prompt and navigate to the directory containing the script.
+4. Run the script by entering python3 koalpaca.py.
+5. Type your input message and press Enter to see the model's generated response.
+6. Continue chatting by entering more messages, and type 'quit' when you wish to exit the chat.
+
+### Ubuntu
 
 ```
-pip install transformers
+git clone https://github.com/gyunggyung/KoAlpaca.cpp
+cd KoAlpaca.cpp
 
+pip3 install --user transformers
+pip3 install --user torch
+
+python3 koalpaca.py
+```
+
+### macOS
+```
+git clone https://github.com/gyunggyung/KoAlpaca.cpp
+
+cd /Users/YourUsername/koalpaca
+
+pip3 install --user transformers
+pip3 install --user torch
+
+python3 koalpaca.py
+
+
+```
+
+### Windows
+```
+git clone https://github.com/gyunggyung/KoAlpaca.cpp
+
+cd C:\koalpaca
+
+pip install transformers
+pip install torch
+
+python koalpaca.py
+```
+
+
+## Old
+```
 git clone https://github.com/gyunggyung/KoAlpaca.cpp
 cd KoAlpaca.cpp
 
@@ -21,9 +66,8 @@ g++ -o koalpaca koalpaca.cpp -I/path/to/transformers/include -L/path/to/transfor
 
 make chat
 ./chat
-
-python koalpaca.py
 ```
+
 
 ### Completed models: Korean model (Polyglot-ko) & English model (LLAMA)
 
