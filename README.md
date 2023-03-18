@@ -11,11 +11,18 @@ This combines the [LLaMA foundation model](https://github.com/facebookresearch/l
 ## Get started
 
 ```
+pip install transformers
+
 git clone https://github.com/gyunggyung/KoAlpaca.cpp
 cd KoAlpaca.cpp
 
+g++ -o koalpaca koalpaca.cpp -I/path/to/transformers/include -L/path/to/transformers/lib -ltransformers -lonnx -ltorch -lc10
+./koalpaca
+
 make chat
 ./chat
+
+python koalpaca.py
 ```
 
 ### Completed models: Korean model (Polyglot-ko) & English model (LLAMA)
