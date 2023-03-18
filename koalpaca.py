@@ -1,23 +1,22 @@
 import torch
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-
-def generate_response(model, tokenizer, prompt, max_length=30):
-    inputs = tokenizer.encode(prompt, return_tensors='pt')
-    outputs = model.generate(inputs, max_length=max_length, num_return_sequences=1)
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+from transformers import GPT2LMHeadModel, PreTrainedTokenizerFast
 
 def main():
     model_name = "beomi/KoAlpaca"
-    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
     model = GPT2LMHeadModel.from_pretrained(model_name)
+    tokenizer = PreTrainedTokenizerFast.from_pretrained(model_name)
 
+    print("Type 'quit' to exit the chat.")
     while True:
-        prompt = input("Enter your input text (type 'quit' to exit):\n")
-        if prompt.strip().lower() == 'quit':
+        input_text = input("User: ")
+        if input_text.lower() == "quit":
             break
 
-        response = generate_response(model, tokenizer, prompt)
-        print(f"Generated text: {response}\n")
+        input_ids = tokenizer.encode(input_text, return_tensors="pt")
+        output = model.generate(input_ids, max_length=100, num_return_sequences=1, no_repeat_ngram_size=2)
+        response = tokenizer.decode(output[0], skip_special_tokens=True)
+
+        print(f"KoAlpaca: {response}")
 
 if __name__ == "__main__":
     main()

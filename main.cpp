@@ -1,8 +1,12 @@
 #include <iostream>
 #include <string>
-#include <transformers/transformers.h>
+
 #include "ggml.h"
 #include "utils.h"
+#include <onnxruntime_c_api.h>
+#include <onnxruntime_cxx_api.h>
+#include <transformers/transformers.h>
+#include <transformers/bert/BertModel.h>
 
 void useKoAlpacaModel() {
     using namespace transformers;
