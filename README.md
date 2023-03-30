@@ -1,4 +1,4 @@
-# KoAlpaca.cpp
+# 현재 동작하지 않아서 도움 필요 KoAlpaca.cpp
 
 Run a fast ChatGPT-like model locally on your device. The screencast below is not sped up and running on an M2 Macbook Air with 4GB of weights. 
 
