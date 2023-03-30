@@ -1,4 +1,50 @@
-# 현재 동작하지 않아서 도움 필요 KoAlpaca.cpp
+```
+
+$ g++ main.cpp -o main -lonnxruntime
+
+main.cpp:6:10: fatal error: onnxruntime_c_api.h: No such file or directory
+
+    6 | #include <onnxruntime_c_api.h>
+
+      | ^~~~~~~~~~~~~~~~~~~~~
+
+compilation terminated.
+
+```
+
+
+```
+
+$ ./chat
+
+-bash: ./chat: No such file or directory
+
+
+$ ./chat.cpp
+
+./chat.cpp: line 2: $'\r': command not found
+
+./chat.cpp: line 4: $'\r': command not found
+
+./chat.cpp: line 13: $'\r': command not found
+
+./chat.cpp: line 20: $'\r': command not found
+
+./chat.cpp: line 29: $'\r': command not found
+
+./chat.cpp: line 30: //: Is a directory
+
+./chat.cpp: line 31: int,: No such file or directory
+
+./chat.cpp: line 38: syntax error near unexpected token `('
+
+'/chat.cpp: line 38: `// default hparams (LLaMA 7B)
+
+```
+
+위 오류 해결 필수.
+
+# KoAlpaca.cpp
 
 Run a fast ChatGPT-like model locally on your device. The screencast below is not sped up and running on an M2 Macbook Air with 4GB of weights. 
 
